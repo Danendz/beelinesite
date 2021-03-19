@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/beelinesite/static/css/main.3fe2578b.chunk.css",
-    "main.js": "/beelinesite/static/js/main.a964a545.chunk.js",
-    "main.js.map": "/beelinesite/static/js/main.a964a545.chunk.js.map",
+    "main.js": "/beelinesite/static/js/main.36acff82.chunk.js",
+    "main.js.map": "/beelinesite/static/js/main.36acff82.chunk.js.map",
     "runtime-main.js": "/beelinesite/static/js/runtime-main.0754239d.js",
     "runtime-main.js.map": "/beelinesite/static/js/runtime-main.0754239d.js.map",
     "static/css/2.f3416bba.chunk.css": "/beelinesite/static/css/2.f3416bba.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.f3416bba.chunk.css",
     "static/js/2.15302325.chunk.js",
     "static/css/main.3fe2578b.chunk.css",
-    "static/js/main.a964a545.chunk.js"
+    "static/js/main.36acff82.chunk.js"
   ]
 }
