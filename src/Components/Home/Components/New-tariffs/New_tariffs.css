@@ -137,6 +137,9 @@ html{
 .arrow-down {
   display: none;
 }
+.tariff-description-container{
+  display: block;
+}
 @media only screen and (max-width: 960px) {
   .new-tariffs {
     flex-direction: column;
