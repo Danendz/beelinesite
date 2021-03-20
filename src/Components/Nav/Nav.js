@@ -6,7 +6,7 @@ function Nav() {
   return (
     <div className="nav">
       <div className="wrapper">
-        <NavLink activeClassName="active" className="link logo-link" to="/beelinesite">
+        <NavLink activeClassName="active" className="link logo-link" to="/">
           <img
             className="nav_logo"
             src="https://beeline.uz/webfiles/1599801229801/dist/images/logo.svg"
@@ -18,7 +18,7 @@ function Nav() {
             exact
             activeClassName="active"
             className="home-link link"
-            to="/beelinesite"
+            to="/"
           >
             <li>
               <i className="fa fa-home"></i>
