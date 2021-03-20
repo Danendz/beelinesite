@@ -14,7 +14,7 @@ function App() {
       <Nav />
     <div className="App container">
       <Switch>
-          <Route path='/' exact component={Home} />
+          <Route path='/beelinesite' exact component={Home} />
           <Route path='/cabinet' exact component={Cabinet} />
           <Route path='/internet_pockets' exact component={Internet_pockets} />
           <Route path='/help' exact component={Help} />

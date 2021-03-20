@@ -6,7 +6,7 @@ function Nav() {
   return (
     <div className="nav">
       <div className="wrapper">
-        <NavLink activeClassName="active" className="link" to="/">
+        <NavLink activeClassName="active" className="link logo-link" to="/beelinesite">
           <img
             className="nav_logo"
             src="https://beeline.uz/webfiles/1599801229801/dist/images/logo.svg"
@@ -14,12 +14,22 @@ function Nav() {
           />
         </NavLink>
         <ul className="nav_menu">
-          <NavLink exact activeClassName="active" className="home-link link"  to="/">
+          <NavLink
+            exact
+            activeClassName="active"
+            className="home-link link"
+            to="/beelinesite"
+          >
             <li>
               <i className="fa fa-home"></i>
             </li>
           </NavLink>
-          <NavLink exact activeClassName="active" className="link" to="/tariffs">
+          <NavLink
+            exact
+            activeClassName="active"
+            className="link"
+            to="/tariffs"
+          >
             <li>
               <i className="fas fa-table"></i>
             </li>
@@ -29,7 +39,7 @@ function Nav() {
               <i className="far fa-question-circle"></i>
             </li>
           </NavLink>
-          <li>
+          <li className="link">
             <i className="fas fa-search"></i>
           </li>
           <NavLink activeClassName="active" className="link" to="/cabinet">
@@ -37,9 +47,6 @@ function Nav() {
               <i className="fas fa-user-lock"></i>
             </li>
           </NavLink>
-          <li className="menu-pc">
-            <i className="fas fa-ellipsis-v"></i>
-          </li>
         </ul>
       </div>
     </div>

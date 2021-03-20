@@ -1,5 +1,6 @@
 .nav {
-  padding: 10px 0;
+  padding: 0;
+  z-index: 3;
   width: 100%;
   background-color: white;
   -webkit-box-shadow: 0px 5px 23px -2px rgba(0, 0, 0, 0.14);
@@ -13,10 +14,12 @@
   margin: 0 auto;
   max-width: 935px;
   position: relative;
+  z-index: 3;
 }
 .nav_menu {
   display: flex;
   list-style: none;
+  z-index: 3;
 }
 .nav_logo {
   cursor: pointer;
@@ -29,12 +32,13 @@
 .nav_menu li {
   border-radius: 10px;
   transition: 0.3s;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   font-size: 25px;
   margin-right: 10px;
   cursor: pointer;
   user-select: none;
+  z-index: 3;
 }
 .nav_menu li:hover {
   /* background-color: rgba(0, 0, 0, 0.1); */
@@ -57,25 +61,36 @@
   transform: scale(1.1);
 }
 
+
+
+
 @media only screen and (max-width: 960px) {
   .nav {
     position: fixed;
+    left: 0;
     bottom: 0;
     max-width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 0;
     align-items: center;
     z-index: 99;
+    -webkit-box-shadow: 0px 5px 23px -2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 5px 23px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 23px -2px rgba(0, 0, 0, 0.3);
   }
   .nav_menu {
     display: flex;
+    margin: 6px 0px 4px 0px;
+    padding: 0;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
   }
-  .nav_logo {
+  .logo-link {
     display: none;
   }
   .nav_menu li {
+    font-size: 23px;
+    padding: 5px;
     margin: 0;
   }
   .nav_menu li:hover {
@@ -86,9 +101,13 @@
   }
   .fa-home {
     display: block;
+    font-size: 22px;
   }
   .home-link {
     display: block;
+  }
+  .link{
+    width: 100%;
   }
   .wrapper {
     justify-content: flex-start;
