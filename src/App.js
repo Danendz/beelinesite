@@ -1,29 +1,37 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Nav from "./Components/Nav/Nav";
-import Home from "./Components/Home/Home";
+import LoadingHome from "./Components/Home/LoadingHome";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import loadable from "@loadable/component";
 
-const Cabinet = loadable(() => import("./Components/Cabinet/Cabinet"));
-
-const Search = loadable(() =>
-  import("./Components/Search/Search")
-);
-const Help = loadable(() => import("./Components/Help/Help"));
-const Tariff = loadable(() => import("./Components/Tariff/Tariff"));
+const Cabinet = React.lazy(() => import("./Components/Cabinet/Cabinet"));
+const Home = React.lazy(() => import("./Components/Home/Home"));
+const Search = React.lazy(() => import("./Components/Search/Search"));
+const Help = React.lazy(() => import("./Components/Help/Help"));
+const Tariff = React.lazy(() => import("./Components/Tariff/Tariff"));
 
 function App() {
   return (
     <Router>
       <Nav />
+
       <div className="App container">
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/cabinet" exact component={Cabinet} />
-          <Route path="/search" exact component={Search} />
-          <Route path="/help" exact component={Help} />
-          <Route path="/tariffs" exact component={Tariff} />
+          <Suspense fallback={<LoadingHome />}>
+            <Route path="/" exact render={() => <Home />} />
+          </Suspense>
+          <Suspense fallback={<span>cabinet...</span>}>
+            <Route path="/cabinet" exact render={() => <Cabinet />} />
+          </Suspense>
+          <Suspense fallback={<span>cabinet...</span>}>
+            <Route path="/search" exact render={() => <Search />} />
+          </Suspense>
+          <Suspense fallback={<span>cabinet...</span>}>
+            <Route path="/help" exact render={() => <Help />} />
+          </Suspense>
+          <Suspense fallback={<span>cabinet...</span>}>
+            <Route path="/tariffs" exact render={() => <Tariff />} />
+          </Suspense>
         </Switch>
       </div>
     </Router>
