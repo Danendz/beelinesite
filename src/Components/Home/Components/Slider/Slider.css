@@ -26,7 +26,6 @@
 .swiper-slide{
   background-color: black;
   height:auto;
-  display: flex;
 }
 @media only screen and (max-width: 960px) {
     .slider {
