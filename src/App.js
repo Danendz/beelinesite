@@ -1,9 +1,8 @@
-import React, {Suspense} from "react";
+import React, { Suspense } from "react";
 import Nav from "./Components/Nav/Nav";
-import Home from './Components/Home/Home';
+import Home from "./Components/Home/Home";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import loadable from "@loadable/component";
 
 const Cabinet = React.lazy(() => import("./Components/Cabinet/Cabinet"));
 
@@ -15,10 +14,10 @@ function App() {
   return (
     <Router>
       <Nav />
+
       <div className="App container">
         <Switch>
-
-            <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Suspense fallback={<span>cabinet...</span>}>
             <Route path="/cabinet" exact render={() => <Cabinet />} />
           </Suspense>
