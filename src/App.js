@@ -1,11 +1,12 @@
 import React from "react";
 import Nav from "./Components/Nav/Nav";
+import Home from "./Components/Home/Home";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import loadable from "@loadable/component";
 
 const Cabinet = loadable(() => import("./Components/Cabinet/Cabinet"));
-const Home = loadable(() => import("./Components/Home/Home"));
+
 const Search = loadable(() =>
   import("./Components/Search/Search")
 );
