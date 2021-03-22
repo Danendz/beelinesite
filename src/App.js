@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import Nav from "./Components/Nav/Nav";
+import Loading from "./Components/Loading/Loading";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -13,9 +14,8 @@ function App() {
   return (
     <Router>
       <Nav />
-
       <div className="App container">
-        <Suspense fallback={<span>...</span>}>
+        <Suspense fallback={<Loading />}>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/cabinet" exact render={() => <Cabinet />} />
