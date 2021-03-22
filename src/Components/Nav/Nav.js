@@ -39,9 +39,11 @@ function Nav() {
               <i className="far fa-question-circle"></i>
             </li>
           </NavLink>
-          <li className="link">
+          <NavLink activeClassName="active" className="link" to="/search">
+          <li>
             <i className="fas fa-search"></i>
           </li>
+          </NavLink>
           <NavLink activeClassName="active" className="link" to="/cabinet">
             <li>
               <i className="fas fa-user-lock"></i>
