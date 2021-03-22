@@ -3,9 +3,7 @@ import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
-import img1 from "./images/img1.webp";
-import img2 from "./images/img2.webp";
-import img3 from "./images/img3.webp";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
