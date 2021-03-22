@@ -15,15 +15,15 @@ function App() {
       <Nav />
 
       <div className="App container">
-        <Switch>
-          <Suspense fallback={<span>...</span>}>
+        <Suspense fallback={<span>...</span>}>
+          <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/cabinet" exact render={() => <Cabinet />} />
             <Route path="/tariffs" exact render={() => <Tariff />} />
             <Route path="/search" exact render={() => <Search />} />
             <Route path="/help" exact render={() => <Help />} />
-          </Suspense>
-        </Switch>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   );
