@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -30,6 +30,13 @@ function Slider() {
     },
   ];  
 
+  useEffect(() => {
+    //preloading image
+    main_slider_carousel.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.imgurl;
+    });
+  });
   return (
     <div className="slider">
       <Swiper
