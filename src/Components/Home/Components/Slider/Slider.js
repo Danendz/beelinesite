@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -9,7 +9,6 @@ import img3 from './images/img3_j.webp';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./Slider.css";
-
 
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
@@ -29,8 +28,15 @@ function Slider() {
         img2,
       description: "Third Image",
     },
-  ];
-  
+  ];  
+
+  useEffect(() => {
+    //preloading image
+    main_slider_carousel.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.imgurl;
+    });
+  });
   return (
     <div className="slider">
       <Swiper
