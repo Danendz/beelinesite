@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useMemo, createRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./New_tariffs.css";
 
-import zor_2 from './Images/zor__3.webp';
-import zor_10 from './Images/zor__10.webp';
-import zor_6 from './Images/zor__7.webp';
-import zor_15 from './Images/zor__15.webp';
+import zor_2 from "./Images/zor__3.webp";
+import zor_10 from "./Images/zor__10.webp";
+import zor_6 from "./Images/zor__7.webp";
+import zor_15 from "./Images/zor__15.webp";
 
 function New_tariffs() {
   const tariffs = [
@@ -55,33 +55,50 @@ function New_tariffs() {
     },
   ];
 
-  const open_func = (tariff, arrow, more, tariff_description) => {
-    if (tariff.className === "tariff-description-container") {
-      tariff.style.display = "block";
+  const tariff_description_container_ref = useMemo(
+    () => Array.from({ length: tariffs.length }).map(() => createRef()),
+    [tariffs.length]
+  );
+
+  const open_func = (tariffid) => {
+    const tariff_description_container =
+      tariff_description_container_ref[tariffid].current;
+
+    const more = tariff_description_container.children[1];
+
+    const arrow =
+      tariff_description_container.parentElement.children[3].children[0];
+
+    const tariff_description_info = tariff_description_container.children[0];
+    if (
+      tariff_description_container.className === "tariff-description-container"
+    ) {
+      tariff_description_container.style.display = "block";
 
       setTimeout(() => {
-        tariff.style.height = "369px";
+        tariff_description_container.style.height = "369px";
       }, 100);
 
       setTimeout(() => {
         more.style.opacity = 1;
-        tariff_description.style.opacity = 1;
-        tariff.style.height = "fit-content";
+        tariff_description_info.style.opacity = 1;
+        tariff_description_container.style.height = "fit-content";
       }, 300);
-      
-      tariff.className = "tariff-description-container opened";
+
+      tariff_description_container.className =
+        "tariff-description-container opened";
       arrow.className = "fas fa-angle-double-up arrow";
     } else {
       more.style.opacity = 0;
-      tariff_description.style.opacity = 0;
-      tariff.style.height = "369px";
+      tariff_description_info.style.opacity = 0;
+      tariff_description_container.style.height = "369px";
       setTimeout(() => {
-        tariff.style.height = "0";
+        tariff_description_container.style.height = "0";
       }, 250);
       setTimeout(() => {
-        tariff.style.display = "none";
+        tariff_description_container.style.display = "none";
       }, 550);
-      tariff.className = "tariff-description-container";
+      tariff_description_container.className = "tariff-description-container";
       arrow.className = "fas fa-angle-double-down arrow";
     }
   };
@@ -91,8 +108,7 @@ function New_tariffs() {
         <h1>Новые Тарифы</h1>
       </div>
       <div className="tariffs-main-container">
-        {tariffs.map((tariff) => (
-
+        {tariffs.map((tariff, i) => (
           <div key={tariff.tariffName} className="tariff-content">
             <div className="container-tariff">
               <img
@@ -101,7 +117,10 @@ function New_tariffs() {
                 alt={tariff.tariffName}
               />
               <p className="tariff-name">{tariff.tariffName}</p>
-              <div className="tariff-description-container">
+              <div
+                ref={tariff_description_container_ref[i]}
+                className="tariff-description-container"
+              >
                 <div className="tariff-description-info">
                   <div className="tariff-description">
                     <img
@@ -179,15 +198,7 @@ function New_tariffs() {
               </div>
               <div
                 onClick={(e) => {
-                  const container = document.querySelectorAll(
-                    ".tariff-description-container"
-                  )[tariff.id];
-                  const arrow = document.querySelectorAll(".arrow")[tariff.id];
-                  const more = document.querySelectorAll(".more")[tariff.id];
-                  const tariff_description_info = document.querySelectorAll(
-                    ".tariff-description-info"
-                  )[tariff.id];
-                  open_func(container, arrow, more, tariff_description_info);
+                  open_func(i);
                 }}
                 className="arrow-down"
               >
