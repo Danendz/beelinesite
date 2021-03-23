@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./Slider.css";
 
+
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
 function Slider() {
