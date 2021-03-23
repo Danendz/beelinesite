@@ -1,0 +1,90 @@
+.section-2 {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  margin-top: 2%;
+  padding: 10px;
+  overflow: hidden;
+}
+.section-container {
+  display: flex;
+  margin-top: 1.5%;
+  width: 30%;
+  justify-content: space-between;
+}
+
+.img-container {
+  position: relative;
+  display: flex;
+  transition: 0.3s;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.img-container:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+.img-container .counter-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 60px;
+  width: 100%;
+  background: #f1c40fb4;
+  font-size: 28px;
+  user-select: none;
+  font-weight: lighter;
+}
+.img-container .counter-container span {
+  color: #424649;
+}
+.img-container img {
+  user-select: none;
+  width: 60px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  height: 60px;
+}
+.full-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+.full-image-container img {
+  user-select: none;
+  transition: 0.3s;
+  width: 99%;
+  height: 13vw;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+}
+@media only screen and (max-width: 960px) {
+  .section-container {
+    width: 80%;
+  }
+  .full-image-container img{
+      width: 100%;
+      height: 38vw
+  }
+  .section-2{
+      width: 90%;
+  }
+  .full-image-container{
+      margin-top:4%;
+  }
+}

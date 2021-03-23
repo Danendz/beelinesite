@@ -1,4 +1,5 @@
 .slider-img {
+  user-select:none;
   width: 100%;
   height: fit-content;
 }
