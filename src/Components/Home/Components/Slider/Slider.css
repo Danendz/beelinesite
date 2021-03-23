@@ -1,5 +1,6 @@
 .slider-img {
   width: 100%;
+  height: auto;
 }
 .slider {
   z-index: 1;
@@ -36,14 +37,12 @@
 
 @media only screen and (max-width: 610px) {
   .slider {
-
-    height: 49vw!important;
+    height: 49vw !important;
   }
 }
 @media only screen and (max-width: 960px) {
   .slider {
     width: 100%;
-
     height: 300px;
   }
 }
