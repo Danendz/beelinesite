@@ -2,10 +2,10 @@ import React, { useMemo, createRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./New_tariffs.css";
 
-import zor_2 from "./Images/zor__3.webp";
-import zor_10 from "./Images/zor__10.webp";
-import zor_6 from "./Images/zor__7.webp";
-import zor_15 from "./Images/zor__15.webp";
+import zor_2 from "./Images/zor_j_3.webp";
+import zor_10 from "./Images/zor_j_10.webp";
+import zor_6 from "./Images/zor_j_7.webp";
+import zor_15 from "./Images/zor_j_15.webp";
 
 function New_tariffs() {
   const tariffs = [

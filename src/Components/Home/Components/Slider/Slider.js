@@ -5,8 +5,7 @@ import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import img1 from './images/img1.webp';
 import img2 from './images/img2.webp';
-import img3 from './images/img3.webp';
-
+import img3 from './images/img3_j.webp';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import "./Slider.css";
