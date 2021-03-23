@@ -29,6 +29,7 @@ function Slider() {
       description: "Third Image",
     },
   ];
+
   return (
     <div className="slider">
       <Swiper
