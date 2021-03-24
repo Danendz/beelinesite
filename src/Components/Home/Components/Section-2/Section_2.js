@@ -41,9 +41,7 @@ function Section2() {
             onClick={(e) => switch_image(i)}
             className="img-container"
           >
-            <div className="placeholder">
               <LazyLoadImage effect="blur" src={img.img_url} alt="news" />
-            </div>
             <div className="counter-container">
               <span>{i + 1}</span>
             </div>

@@ -1,0 +1,175 @@
+.services_container {
+  display: flex;
+  margin-top: 2%;
+  justify-content: flex-end;
+  padding: 10px;
+  width: 50%;
+  height: fit-content;
+  overflow:hidden;
+  text-align: center;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+}
+.service_img_container_main {
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+}
+.service_img_container {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 2px 0 0px 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.service_img_container:hover {
+  transform: scale(1.05);
+  background-color: #ffcc00;
+}
+.service_container_active{
+    display: flex!important;
+}
+.service_active{
+    transform: scale(1.05);
+    background-color: #ffcc00;
+}
+.service_img_container img {
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+}
+.service_container_column {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+
+}
+.service_container p {
+  margin: 0;
+}
+.service_container {
+  position: relative;
+  transition: .3s;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  border-radius: 20px;
+  height: fit-content;
+  padding: 20px;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+}
+.service_img_container img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.service_name {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.service_limits_internet {
+  margin-top: 7px;
+  border-radius: 10px;
+  width: 90%;
+  padding: 8px;
+  color: rgb(41, 41, 41);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ffcc00d3;
+}
+.service_description {
+  margin-top: 7px;
+  font-size: 18px;
+  color: rgb(34, 34, 34);
+  font-weight: bold;
+}
+.service_btn_container {
+  margin-top: 7px;
+}
+.service_btn {
+  transition: 0.2s;
+  cursor: pointer;
+
+  padding: 10px 35px;
+  background-color: #ffcc00;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(27, 40, 95, 0.322);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
+}
+.service_description_container {
+  margin-top: 10px;
+  text-align: start;
+  padding: 10px;
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+}
+.service_description_item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.service_description_text {
+  margin-left: 10px;
+}
+.services_more {
+  margin-top: 7px;
+}
+.services_more_btn {
+  transition: 0.2s;
+  padding: 10px 60px;
+  cursor: pointer;
+  background-color: #ffcc00;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.589);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(27, 40, 95, 0.589);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.589);
+}
+.services_more_btn:hover,
+.service_btn:hover {
+  transform: scale(1.02) translateY(-3px);
+  -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: 0px 2px 10px -2px rgba(27, 40, 95, 0.76);
+  box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.76);
+}
+@media only screen and (max-width: 960px) {
+  .services_container {
+    flex-direction: column;
+  }
+  .service_img_container_main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+  }
+  .services_container {
+    width: 85%;
+  }
+  .service_container {
+    width: 85%;
+    margin-bottom: 10px;
+  }
+  .service_description_container {
+    padding: 0;
+  }
+}

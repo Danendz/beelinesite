@@ -164,6 +164,7 @@ html{
   }
   .tariff-description {
     opacity: 1;
+
     transition: .2s;
     display: flex;
   }
@@ -210,5 +211,18 @@ html{
   }
   .tariff-description-info{
     opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 965px) {
+  .tariff-description-container{
+    display: block!important;
+    height: fit-content!important;
+  }
+  .more{
+    opacity: 1!important;
+  }
+  .tariff-description-info{
+    opacity: 1!important;
   }
 }
