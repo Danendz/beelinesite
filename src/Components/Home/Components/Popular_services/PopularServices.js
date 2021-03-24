@@ -117,19 +117,29 @@ function PopularServices() {
     [services.length]
   );
   let last;
-    
+
   const change_service = (id) => {
-    if(last !== undefined){
-        service_container[last].current.style.display = 'none';
+    if (last !== undefined) {
+      service_container[last].current.style.display = "none";
     }
     const service_container_item = service_container[id].current;
 
-    service_container_item.style.display = 'flex';
+    service_container_item.style.display = "flex";
     last = id;
-
   };
   return (
     <div className="services_container">
+      <div className="service_img_container_main">
+        {services.map((el, id) => (
+          <div
+            key={id}
+            onClick={() => change_service(id)}
+            className="service_img_container"
+          >
+            <img src={el.img_url} alt={el.service_name} />
+          </div>
+        ))}
+      </div>
       <div className="service_container_column">
         {services.map((service, id) => (
           <div
@@ -185,18 +195,6 @@ function PopularServices() {
             <div className="services_more">
               <button className="services_more_btn">Подробнее</button>
             </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="service_img_container_main">
-        {services.map((el, id) => (
-          <div
-            key={id}
-            onClick={() => change_service(id)}
-            className="service_img_container"
-          >
-            <img src={el.img_url} alt={el.service_name} />
           </div>
         ))}
       </div>
