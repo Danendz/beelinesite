@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import "./PopularServices.css";
 import img1 from "./Images/img1.webp";
 import img2 from "./Images/img2.webp";
@@ -116,25 +116,31 @@ function PopularServices() {
     () => Array.from({ length: services.length }).map(() => React.createRef()),
     [services.length]
   );
+  const imagesRef = useMemo(
+    () => Array.from({ length: services.length }).map(() => React.createRef()),
+    [services.length]
+  );
   let last;
-
   const change_service = (id) => {
     if (last !== undefined) {
       service_container[last].current.style.display = "none";
+      imagesRef[last].current.className = "service_img_container";
     }
     const service_container_item = service_container[id].current;
-
+    imagesRef[id].current.className = "service_img_container service_active";
     service_container_item.style.display = "flex";
     last = id;
   };
   return (
     <div className="services_container">
+      <h2>Популярные услуги</h2>
       <div className="service_img_container_main">
         {services.map((el, id) => (
           <div
+            ref={imagesRef[id]}
             key={id}
             onClick={() => change_service(id)}
-            className="service_img_container"
+            className={`service_img_container`}
           >
             <img src={el.img_url} alt={el.service_name} />
           </div>
@@ -146,6 +152,7 @@ function PopularServices() {
             ref={service_container[id]}
             key={id}
             className="service_container"
+            onLoad={() => change_service(0)}
           >
             <p className="service_name">{service.service_name}</p>
             {service.has_cost === true ? (
@@ -160,7 +167,7 @@ function PopularServices() {
               <></>
             )}
 
-            <span className="service_description">
+            <span style={{height: service.has_cost === false ? '515px' :'fit-content' }}className="service_description">
               {service.service_description}
             </span>
             {service.has_cost === true ? (
@@ -184,7 +191,9 @@ function PopularServices() {
                     />
                     <span className="service_description_text">
                       <strong>{el.cost}</strong>
-                      <span> сум/день</span> - {el.description}
+                      <span> сум/день</span>
+                      {el.description === undefined ? "" : " - "}
+                      {el.description}
                     </span>
                   </div>
                 ))}

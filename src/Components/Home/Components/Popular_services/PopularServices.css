@@ -5,16 +5,25 @@
   padding: 10px;
   width: 50%;
   height: fit-content;
-  overflow:hidden;
+  overflow: hidden;
+  flex-direction: column;
   text-align: center;
   -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
   -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
   box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
 }
+.services_container h2 {
+  font-size: 45px;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+}
 .service_img_container_main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 10px;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-bottom: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
   -moz-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.322);
@@ -29,17 +38,19 @@
   height: 62px;
   border-radius: 50%;
   transition: 0.2s;
+  transform: scale(1);
+  background-color: transparent;
 }
 .service_img_container:hover {
   transform: scale(1.05);
   background-color: #ffcc00;
 }
-.service_container_active{
-    display: flex!important;
+.service_container_active {
+  display: flex !important;
 }
-.service_active{
-    transform: scale(1.05);
-    background-color: #ffcc00;
+.service_active {
+  transform: scale(1.05);
+  background-color: #ffcc00;
 }
 .service_img_container img {
   -webkit-box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
@@ -50,14 +61,13 @@
   display: flex;
   flex-direction: column;
   align-items: space-around;
-
 }
 .service_container p {
   margin: 0;
 }
 .service_container {
   position: relative;
-  transition: .3s;
+  transition: 0.3s;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -72,6 +82,7 @@
   box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.329);
 }
 .service_img_container img {
+    user-select: none;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -92,6 +103,7 @@
   background-color: #ffcc00d3;
 }
 .service_description {
+   
   margin-top: 7px;
   font-size: 18px;
   color: rgb(34, 34, 34);
@@ -103,7 +115,6 @@
 .service_btn {
   transition: 0.2s;
   cursor: pointer;
-
   padding: 10px 35px;
   background-color: #ffcc00;
   outline: none;
@@ -120,6 +131,7 @@
   padding: 10px;
   display: flex;
   font-size: 20px;
+  height: 360px;
   flex-direction: column;
 }
 .service_description_item {
@@ -155,6 +167,9 @@
 @media only screen and (max-width: 960px) {
   .services_container {
     flex-direction: column;
+  }
+  .services_container h2 {
+    font-size: 30px;
   }
   .service_img_container_main {
     display: flex;
