@@ -187,4 +187,7 @@
   .service_description_container {
     padding: 0;
   }
+  .services_more {
+    margin-top: 15px;
+  }
 }
