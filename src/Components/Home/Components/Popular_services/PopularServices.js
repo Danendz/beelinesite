@@ -136,83 +136,91 @@ function PopularServices() {
   return (
     <div className="services_container">
       <h2>Популярные услуги</h2>
-      <div className="service_img_container_main">
-        {services.map((el, id) => (
-          <div
-            ref={imagesRef[id]}
-            key={id}
-            onClick={() => change_service(id)}
-            className={`service_img_container`}
-          >
-            <LazyLoadImage effect="blur" src={el.img_url} alt={el.service_name} />
-          </div>
-        ))}
-      </div>
-      <div className="service_container_column">
-        {services.map((service, id) => (
-          <div
-            ref={service_container[id]}
-            key={id}
-            className="service_container"
-            onLoad={() => change_service(0)}
-          >
-            <p className="service_name">{service.service_name}</p>
-            {service.has_cost === true ? (
-              <div className="service_limits_internet">
-                <p>
-                  {service.noLimits_internet === true
-                    ? "БЕЗЛИМИТНЫЙ ИНТЕРНЕТ"
-                    : "НЕ БЕЗЛИТНЫЙ ИНТЕРНЕТ"}
-                </p>
-              </div>
-            ) : (
-              <></>
-            )}
-
-            <span
-              style={{
-                height: service.has_cost === false ? "515px" : "fit-content",
-              }}
-              className="service_description"
+      <div className="services_container_main">
+        <div className="service_img_container_main">
+          {services.map((el, id) => (
+            <div
+              ref={imagesRef[id]}
+              key={id}
+              onClick={() => change_service(id)}
+              className={`service_img_container`}
             >
-              {service.service_description}
-            </span>
-            {service.has_cost === true ? (
-              <div className="service_btn_container">
-                <button className="service_btn">
-                  {service.is_app === true ? "СКАЧАТЬ APK" : "ПЕРЕЙТИ НА САЙТ"}
-                </button>
-              </div>
-            ) : (
-              <></>
-            )}
-
-            {service.has_cost === true ? (
-              <div className="service_description_container">
-                {services[id].costs.map((el, i) => (
-                  <div key={i} className="service_description_item">
-                    <img
-                      className="tariff-icon"
-                      src="https://beeline.uz/binaries//content/gallery/mainsite/icons/money.svg/money.svg"
-                      alt={el.description}
-                    />
-                    <span className="service_description_text">
-                      <strong>{el.cost}</strong>
-                      <span> сум/день</span>
-                      {el.description === undefined ? "" : " - "}
-                      {el.description}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <></>
-            )}
-            <div className="services_more">
-              <button className="services_more_btn">Подробнее</button>
+              <LazyLoadImage
+                effect="blur"
+                src={el.img_url}
+                alt={el.service_name}
+              />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className="service_container_column">
+          {services.map((service, id) => (
+            <div
+              ref={service_container[id]}
+              key={id}
+              className="service_container"
+              onLoad={() => change_service(0)}
+            >
+              <p className="service_name">{service.service_name}</p>
+              {service.has_cost === true ? (
+                <div className="service_limits_internet">
+                  <p>
+                    {service.noLimits_internet === true
+                      ? "БЕЗЛИМИТНЫЙ ИНТЕРНЕТ"
+                      : "НЕ БЕЗЛИТНЫЙ ИНТЕРНЕТ"}
+                  </p>
+                </div>
+              ) : (
+                <></>
+              )}
+
+              <span
+                style={{
+                  height: service.has_cost === false ? "515px" : "fit-content",
+                }}
+                className="service_description"
+              >
+                {service.service_description}
+              </span>
+              {service.has_cost === true ? (
+                <div className="service_btn_container">
+                  <button className="service_btn">
+                    {service.is_app === true
+                      ? "СКАЧАТЬ APK"
+                      : "ПЕРЕЙТИ НА САЙТ"}
+                  </button>
+                </div>
+              ) : (
+                <></>
+              )}
+
+              {service.has_cost === true ? (
+                <div className="service_description_container">
+                  {services[id].costs.map((el, i) => (
+                    <div key={i} className="service_description_item">
+                      <img
+                        className="tariff-icon"
+                        src="https://beeline.uz/binaries//content/gallery/mainsite/icons/money.svg/money.svg"
+                        alt={el.description}
+                      />
+                      <span className="service_description_text">
+                        <strong>{el.cost}</strong>
+                        <span> сум/день</span>
+                        {el.description === undefined ? "" : " - "}
+                        {el.description}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <></>
+              )}
+              <div className="services_more">
+                <button className="services_more_btn">Подробнее</button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

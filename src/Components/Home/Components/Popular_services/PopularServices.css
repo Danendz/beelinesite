@@ -176,6 +176,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 0;
+    margin-top: 10px;
   }
   .services_container {
     width: 85%;
@@ -189,5 +190,10 @@
   }
   .services_more {
     margin-top: 15px;
+  }
+  .services_container_main{
+      display:flex;
+      flex-direction: column-reverse;
+
   }
 }
