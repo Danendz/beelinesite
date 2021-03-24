@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import "./PopularServices.css";
 import img1 from "./Images/img1.webp";
 import img2 from "./Images/img2.webp";
@@ -167,7 +167,12 @@ function PopularServices() {
               <></>
             )}
 
-            <span style={{height: service.has_cost === false ? '515px' :'fit-content' }}className="service_description">
+            <span
+              style={{
+                height: service.has_cost === false ? "515px" : "fit-content",
+              }}
+              className="service_description"
+            >
               {service.service_description}
             </span>
             {service.has_cost === true ? (
