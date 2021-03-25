@@ -29,7 +29,7 @@ function Section2() {
     }, 350);
     setTimeout(() => {
       full_image_short.style.opacity = 1;
-    }, 400);
+    }, 500);
   };
 
   return (

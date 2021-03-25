@@ -5,6 +5,7 @@ import Section from "./Components/Section-1/Section";
 import NewTariffs from "./Components/New-tariffs/NewTariffs";
 import Section2 from './Components/Section-2/Section_2'
 import PopularServices from "./Components/Popular_services/PopularServices";
+import ShopHome from "./Components/Shop_home/ShopHome";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <NewTariffs />
       <Section2 />
       <PopularServices />
+      <ShopHome />
     </div>
   );
 }
