@@ -6,7 +6,7 @@ import NewTariffs from "./Components/New-tariffs/NewTariffs";
 import Section2 from './Components/Section-2/Section_2'
 import PopularServices from "./Components/Popular_services/PopularServices";
 import ShopHome from "./Components/Shop_home/ShopHome";
-
+import NewPromotions from './Components/NewPromotions/NewPromotions';
 function Home() {
   return (
     <div className="home">
@@ -16,6 +16,7 @@ function Home() {
       <Section2 />
       <PopularServices />
       <ShopHome />
+      <NewPromotions />
     </div>
   );
 }
