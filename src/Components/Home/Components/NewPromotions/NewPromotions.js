@@ -1,5 +1,5 @@
 import React from "react";
-import './NewPromotions.css';
+import "./NewPromotions.css";
 import img1 from "./images/img1.webp";
 import img2 from "./images/img2.webp";
 function NewPromotions() {
@@ -8,9 +8,21 @@ function NewPromotions() {
       promotion_img: img1,
       promotion_start_date: "27.01.2021",
       promotion_end_date: "31.03.2021",
-      promotion_name: "<<ЗОЛОТАЯ>> акция от Beeline!",
-      promotion_description:
-        "Акция на <<золотые>> номера со скидкой 90% продолжается!",
+      promotion_name: (
+        <h2>
+          <span className="promotion_special_symbol">{"<<"}</span>ЗОЛОТАЯ
+          <span className="promotion_special_symbol">{">>"}</span> акция от
+          Beeline!
+        </h2>
+      ),
+
+      promotion_description: (
+        <span>
+          Акция на <span className="promotion_special_symbol">{"<<"}</span>
+          золотые<span className="promotion_special_symbol">{">>"}</span> номера
+          со скидкой 90% продолжается!"
+        </span>
+      ),
     },
     {
       promotion_img: img2,
@@ -34,6 +46,9 @@ function NewPromotions() {
               </div>
               <h2>{promotion.promotion_name}</h2>
               <p>{promotion.promotion_description}</p>
+            </div>
+            <div className="promotion_more">
+              <button>Подробнее</button>
             </div>
           </div>
         ))}
