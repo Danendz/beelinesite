@@ -2,6 +2,9 @@ import React from "react";
 import "./NewPromotions.css";
 import img1 from "./images/img1.webp";
 import img2 from "./images/img2.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 function NewPromotions() {
   const promotions = [
     {
@@ -38,7 +41,7 @@ function NewPromotions() {
       <div className="promotions_container">
         {promotions.map((promotion, i) => (
           <div className="promotion">
-            <img src={promotion.promotion_img} alt={promotion.promotion_name} />
+            <LazyLoadImage effect="blur" src={promotion.promotion_img} alt={promotion.promotion_name} />
             <div className="promotion_description">
               <div className="promotion_description_date">
                 <span>{promotion.promotion_start_date}</span>
