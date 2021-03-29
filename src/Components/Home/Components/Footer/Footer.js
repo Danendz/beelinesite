@@ -129,7 +129,7 @@ function Footer() {
       <div className="footer_middle_container">
         {sections.map((section) => (
           <div className="footer_section">
-            <p>{section.section_name}</p>
+            <p className="section_name">{section.section_name}</p>
             {section.section_subsections.map((subsection) => (
               <p>{subsection}</p>
             ))}
