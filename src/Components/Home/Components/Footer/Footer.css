@@ -91,6 +91,7 @@
   margin-right: 5px;
   margin-left: 5px;
   border-radius: 10px;
+  user-select: none;
   transition: 0.3s;
 }
 .footer_connection .call_beeline:hover,
