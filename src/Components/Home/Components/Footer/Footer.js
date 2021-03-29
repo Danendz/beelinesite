@@ -6,6 +6,7 @@ import twitter from "./icons/twitter.svg";
 import odnok from "./icons/odnok.svg";
 import youtube from "./icons/youtube.svg";
 import telegram from "./icons/telegram.svg";
+import logo from "./icons/logo.svg";
 function Footer() {
   const social_icons = [
     {
@@ -131,10 +132,30 @@ function Footer() {
           <div className="footer_section">
             <p className="section_name">{section.section_name}</p>
             {section.section_subsections.map((subsection) => (
-              <p>{subsection}</p>
+              <p className="footer_list">{subsection}</p>
             ))}
           </div>
         ))}
+      </div>
+      <div className="footer_bottom_main_container">
+        <div className="footer_bottom_container">
+          <img src={logo} alt="logo" />
+          <span>Beeline 2021</span>
+          <a
+            href={
+              "https://play.google.com/store/apps/details?id=uz.beeline.odp&hl=ru-------android"
+            }
+          >
+            <i class="fab fa-google-play"></i>
+          </a>
+          <a
+            href={
+              "http://itunes.apple.com/us/app/beeline-uzbekistan/id722072887?l=ru&ls=1&mt=8"
+            }
+          >
+            <i class="fab fa-apple"></i>
+          </a>
+        </div>
       </div>
     </div>
   );
