@@ -22,6 +22,8 @@
   margin-right: 10px;
 }
 .footer_social_icons img {
+  width: 27px;
+  height: 27px;
   transition: all 0.3s;
 }
 .footer_social_icons img:hover {
@@ -232,6 +234,10 @@
     text-align: center;
   }
   .footer_bottom_container{
-    width: 80%;
+    width: 85%;
+  }
+  .footer_social_icons img {
+    width: 35px;
+    height: 35px;
   }
 }
