@@ -35,7 +35,7 @@ function Help() {
     {
       help_img:
         "https://beeline.uz/binaries/content/gallery/mainsite/icons/phone.svg",
-      help_description: "Управляй своей связью, не выходя из",
+      help_description: "Будь мобильным - пользуйся приложением Beeline ",
       help_link: "iOS, ",
       help_link2: "Android",
       help_page: "Apps",

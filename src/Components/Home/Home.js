@@ -9,6 +9,7 @@ import ShopHome from "./Components/Shop_home/ShopHome";
 import NewPromotions from "./Components/NewPromotions/NewPromotions";
 import News from "./Components/News/News";
 import Help from "./Components/Help/Help";
+import Footer from "./Components/Footer/Footer";
 function Home() {
   return (
     <div className="home">
@@ -21,6 +22,7 @@ function Home() {
       <NewPromotions />
       <News />
       <Help />
+      <Footer />
     </div>
   );
 }
