@@ -39,6 +39,58 @@ function Footer() {
       link: "https://t.me/BeelineUzbBot",
     },
   ];
+  const sections = [
+    {
+      section_name: "Мобильная связь",
+      section_subsections: [
+        "Тарифы",
+        "Услуги",
+        "Оплата услуг",
+        "Акции",
+        "Роуминг",
+        "Зона покрытия",
+        "4G от Beeline",
+      ],
+    },
+    {
+      section_name: "Фиксированная связь",
+      section_subsections: [
+        "Телефоные карты Билайн",
+        "Телефоные коды",
+        "Установка домашнего телефона",
+        "Проводной интернет",
+      ],
+    },
+    {
+      section_name: "Приложения и сервисы",
+      section_subsections: [
+        "Информация и развлечения",
+        "Приложение Beeline Uzbekistan",
+        "Beeline TV",
+        "Beeline Music",
+        "Платежный сервис Beepul",
+        "Программа Beeline Club 2.0",
+        "Data center",
+        "Магазин",
+      ],
+    },
+    {
+      section_name: "О компании",
+      section_subsections: [
+        "О нас",
+        "Комплаенс",
+        "Миссия и подход",
+        "Юридические документы",
+        "Вакансии",
+        "Стажировка",
+        "Тендеры",
+        "Офисы",
+        "Руководство",
+        "Как стать дилером",
+        "Контакты",
+      ],
+    },
+  ];
   return (
     <div className="footer_main_container">
       <div className="footer_top_container">
@@ -73,6 +125,16 @@ function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="footer_middle_container">
+        {sections.map((section) => (
+          <div className="footer_section">
+            <p>{section.section_name}</p>
+            {section.section_subsections.map((subsection) => (
+              <p>{subsection}</p>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
