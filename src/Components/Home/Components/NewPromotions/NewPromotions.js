@@ -2,8 +2,6 @@ import React from "react";
 import "./NewPromotions.css";
 import img1 from "./images/img1.webp";
 import img2 from "./images/img2.webp";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import LazyLoad from 'react-lazyload';
 
 function NewPromotions() {
