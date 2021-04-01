@@ -2,7 +2,7 @@ import React from "react";
 import "./NewPromotions.css";
 import img1 from "./images/img1.webp";
 import img2 from "./images/img2.webp";
-import LazyLoad from "react-lazyload";
+import PreloadImage from "react-preload-image";
 
 function NewPromotions() {
   const promotions = [
@@ -40,18 +40,12 @@ function NewPromotions() {
       <div className="promotions_container">
         {promotions.map((promotion, i) => (
           <div key={i} className="promotion">
-            <LazyLoad
-              offset={[-200, 0]}
-              debounce={500}
-              placeholder={<h2>loading...</h2>}
-              once={true}
-              height={200}
-            >
-              <img
-                src={promotion.promotion_img}
-                alt={promotion.promotion_name}
-              />
-            </LazyLoad>
+            <PreloadImage
+              lazy
+              className="promotion_img"
+              src={promotion.promotion_img}
+              alt={promotion.promotion_name}
+            />
             <div className="promotion_description">
               <div className="promotion_description_date">
                 <span>{promotion.promotion_start_date}</span>

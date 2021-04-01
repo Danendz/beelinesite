@@ -1,34 +1,46 @@
-import React, { useState } from "react";
+import React, { useMemo } from "react";
 import img1 from "./images/firstImg.webp";
 import img2 from "./images/SecondImg.webp";
 import img3 from "./images/thirdImg.webp";
 import "./Section_2.css";
 import LazyLoad from "react-lazyload";
-
-const images = [
-  {
-    img_url: img1,
-  },
-  {
-    img_url: img2,
-  },
-  {
-    img_url: img3,
-  },
-];
+import PreloadImage from "react-preload-image";
 
 function Section2() {
-  const full_image = React.createRef();
-  let [source, setSource] = useState(0);
+  const images = [
+    {
+      img_url: img1,
+    },
+    {
+      img_url: img2,
+    },
+    {
+      img_url: img3,
+    },
+  ];
+  const full_image = useMemo(
+    () => Array.from({ length: images.length }).map(() => React.createRef()),
+    [images.length]
+  );
+
+  let previousImg = 0;
   const switch_image = (id) => {
-    const full_image_short = full_image.current;
-    full_image_short.style.opacity = 0;
+    const full_image_short_current = full_image[id].current;
+    const full_image_short_previous = full_image[previousImg].current;
+
+    full_image_short_previous.style.opacity = 0;
     setTimeout(() => {
-      setSource(id);
-    }, 350);
+      full_image_short_previous.style.display = "none";
+    }, 300);
+
     setTimeout(() => {
-      full_image_short.style.opacity = 1;
-    }, 500);
+      full_image_short_current.style.display = "block";
+    }, 400);
+    setTimeout(() => {
+      full_image_short_current.style.opacity = 1;
+    }, 450);
+
+    previousImg = id;
   };
 
   return (
@@ -40,19 +52,25 @@ function Section2() {
             onClick={(e) => switch_image(i)}
             className="img-container"
           >
-            <LazyLoad once={true} height={200}>
-              <img src={img.img_url} alt="news" />
-            </LazyLoad>
+              <PreloadImage className="section_img" src={img.img_url} alt="news" />
+         
             <div className="counter-container">
               <span>{i + 1}</span>
             </div>
           </div>
         ))}
       </div>
-      <div ref={full_image} className="full-image-container">
-        <LazyLoad height={600}>
-          <img src={images[source].img_url} alt="full" />
-        </LazyLoad>
+      <div className="full-image-container">
+        {images.map((img, id) => (
+          <LazyLoad key={id} height={600}>
+            <img
+              style={{display: id !== 0 ? 'none' : 'block'}}
+              ref={full_image[id]}
+              src={img.img_url}
+              alt="full"
+            />
+          </LazyLoad>
+        ))}
       </div>
     </div>
   );
