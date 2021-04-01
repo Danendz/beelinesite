@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Loading.css";
 import 'animate.css';
 function Loading() {
-  const animations = ['animate__bounce', 'animate__pulse', 'animate__rubberBand', 'animate__swing', 'animate__tada', 'animate__wobble', 'animate__fadeIn', 'animate__flip', ]
+  const animations = ['animate__bounce', 'animate__pulse', 'animate__rubberBand', 'animate__swing', 'animate__tada', 'animate__wobble', 'animate__flip', ]
   const pickAnimation = () =>{
     let rndnum = Math.floor(Math.random() * animations.length)
     setAnim(animations[rndnum])
