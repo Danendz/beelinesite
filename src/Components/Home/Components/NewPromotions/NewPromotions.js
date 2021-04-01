@@ -40,7 +40,13 @@ function NewPromotions() {
       <div className="promotions_container">
         {promotions.map((promotion, i) => (
           <div key={i} className="promotion">
-            <LazyLoad placeholder={<span>is loading...</span>} once={true} height={400}>
+            <LazyLoad
+              offset={[-200, 0]}
+              debounce={500}
+              placeholder={<h2>loading...</h2>}
+              once={true}
+              height={200}
+            >
               <img
                 src={promotion.promotion_img}
                 alt={promotion.promotion_name}
