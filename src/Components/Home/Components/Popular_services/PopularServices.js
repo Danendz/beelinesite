@@ -4,8 +4,7 @@ import img1 from "./Images/img1.webp";
 import img2 from "./Images/img2.webp";
 import img3 from "./Images/img3.webp";
 import img4 from "./Images/img4.webp";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import LazyLoad from "react-lazyload"
 
 function PopularServices() {
   const services = [
@@ -145,11 +144,12 @@ function PopularServices() {
               onClick={() => change_service(id)}
               className={`service_img_container`}
             >
-              <LazyLoadImage
-                effect="blur"
+              <LazyLoad once={true} height={200}>
+              <img
                 src={el.img_url}
                 alt={el.service_name}
               />
+              </LazyLoad>
             </div>
           ))}
         </div>

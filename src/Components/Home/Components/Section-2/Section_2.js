@@ -3,9 +3,7 @@ import img1 from "./images/firstImg.webp";
 import img2 from "./images/SecondImg.webp";
 import img3 from "./images/thirdImg.webp";
 import "./Section_2.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import LazyLoad from 'react-lazyload'
-import "react-lazy-load-image-component/src/effects/blur.css";
+import LazyLoad from "react-lazyload";
 
 const images = [
   {
@@ -42,7 +40,9 @@ function Section2() {
             onClick={(e) => switch_image(i)}
             className="img-container"
           >
-              <LazyLoadImage effect="blur" src={img.img_url} alt="news" />
+            <LazyLoad once={true} height={200}>
+              <img src={img.img_url} alt="news" />
+            </LazyLoad>
             <div className="counter-container">
               <span>{i + 1}</span>
             </div>
@@ -51,7 +51,7 @@ function Section2() {
       </div>
       <div ref={full_image} className="full-image-container">
         <LazyLoad height={600}>
-        <img src={images[source].img_url} alt="full" />
+          <img src={images[source].img_url} alt="full" />
         </LazyLoad>
       </div>
     </div>

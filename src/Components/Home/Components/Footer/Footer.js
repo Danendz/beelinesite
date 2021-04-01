@@ -7,6 +7,7 @@ import odnok from "./icons/odnok.svg";
 import youtube from "./icons/youtube.svg";
 import telegram from "./icons/telegram.svg";
 import logo from "./icons/logo.svg";
+import LazyLoad from "react-lazyload";
 function Footer() {
   const social_icons = [
     {
@@ -99,7 +100,9 @@ function Footer() {
           {social_icons.map((icon, id) => (
             <div key={id} className="footer_social_icons">
               <a href={icon.link}>
+                <LazyLoad once={true} height={100}>
                 <img src={icon.icon} alt={icon.description} />
+                </LazyLoad>
               </a>
             </div>
           ))}
@@ -139,7 +142,9 @@ function Footer() {
       </div>
       <div className="footer_bottom_main_container">
         <div className="footer_bottom_container">
+        <LazyLoad once={true} height={100}>
           <img src={logo} alt="logo" />
+          </LazyLoad>
           <span>Beeline 2021</span>
           <a
             href={
