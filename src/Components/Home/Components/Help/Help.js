@@ -43,8 +43,8 @@ function Help() {
   ];
   return (
     <div className="help_container_main">
-      {help.map((el) => (
-        <NavLink className="help_item" to={el.help_page}>
+      {help.map((el, id) => (
+        <NavLink key={id} className="help_item" to={el.help_page}>
           <div className="help_item_container">
             <img src={el.help_img} alt={el.help_description} />
             <span>

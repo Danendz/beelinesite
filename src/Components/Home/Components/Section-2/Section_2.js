@@ -4,6 +4,7 @@ import img2 from "./images/SecondImg.webp";
 import img3 from "./images/thirdImg.webp";
 import "./Section_2.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import LazyLoad from 'react-lazyload'
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const images = [
@@ -49,7 +50,9 @@ function Section2() {
         ))}
       </div>
       <div ref={full_image} className="full-image-container">
-        <LazyLoadImage effect="blur" src={images[source].img_url} alt="full" />
+        <LazyLoad height={600}>
+        <img src={images[source].img_url} alt="full" />
+        </LazyLoad>
       </div>
     </div>
   );

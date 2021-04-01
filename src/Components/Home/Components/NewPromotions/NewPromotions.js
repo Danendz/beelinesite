@@ -4,6 +4,7 @@ import img1 from "./images/img1.webp";
 import img2 from "./images/img2.webp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import LazyLoad from 'react-lazyload';
 
 function NewPromotions() {
   const promotions = [
@@ -12,11 +13,11 @@ function NewPromotions() {
       promotion_start_date: "27.01.2021",
       promotion_end_date: "31.03.2021",
       promotion_name: (
-        <h2>
+        <>
           <span className="promotion_special_symbol">{"<<"}</span>ЗОЛОТАЯ
           <span className="promotion_special_symbol">{">>"}</span> акция от
           Beeline!
-        </h2>
+        </>
       ),
 
       promotion_description: (
@@ -40,8 +41,10 @@ function NewPromotions() {
       <h2>Акции</h2>
       <div className="promotions_container">
         {promotions.map((promotion, i) => (
-          <div className="promotion">
-            <LazyLoadImage effect="blur" src={promotion.promotion_img} alt={promotion.promotion_name} />
+          <div key={i} className="promotion">
+            <LazyLoad height={400}>
+            <img src={promotion.promotion_img} alt={promotion.promotion_name} />
+            </LazyLoad>
             <div className="promotion_description">
               <div className="promotion_description_date">
                 <span>{promotion.promotion_start_date}</span>

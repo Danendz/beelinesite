@@ -96,8 +96,8 @@ function Footer() {
     <div className="footer_main_container">
       <div className="footer_top_container">
         <div className="footer_icons_container">
-          {social_icons.map((icon) => (
-            <div className="footer_social_icons">
+          {social_icons.map((icon, id) => (
+            <div key={id} className="footer_social_icons">
               <a href={icon.link}>
                 <img src={icon.icon} alt={icon.description} />
               </a>
@@ -128,11 +128,11 @@ function Footer() {
         </div>
       </div>
       <div className="footer_middle_container">
-        {sections.map((section) => (
-          <div className="footer_section">
+        {sections.map((section, id) => (
+          <div key={id} className="footer_section">
             <p className="section_name">{section.section_name}</p>
-            {section.section_subsections.map((subsection) => (
-              <p className="footer_list">{subsection}</p>
+            {section.section_subsections.map((subsection, i) => (
+              <p key={i} className="footer_list">{subsection}</p>
             ))}
           </div>
         ))}
@@ -146,14 +146,14 @@ function Footer() {
               "https://play.google.com/store/apps/details?id=uz.beeline.odp&hl=ru-------android"
             }
           >
-            <i class="fab fa-google-play"></i>
+            <i className="fab fa-google-play"></i>
           </a>
           <a
             href={
               "http://itunes.apple.com/us/app/beeline-uzbekistan/id722072887?l=ru&ls=1&mt=8"
             }
           >
-            <i class="fab fa-apple"></i>
+            <i className="fab fa-apple"></i>
           </a>
         </div>
       </div>

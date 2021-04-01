@@ -1,5 +1,5 @@
 import React, { useMemo, createRef } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./New_tariffs.css";
 
 import zor_2 from "./Images/zor_j_3.webp";
@@ -186,14 +186,15 @@ function New_tariffs() {
                     </span>{" "}
                     сум/мес
                   </span>
-                  <NavLink
+                  <Link
                     className="tariff-links"
                     to={`/tariffs/${tariff.tariffName
                       .replace(`'`, "")
                       .replace(" ", "-")}`}
+                      
                   >
                     <button>Подробнее</button>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
               <div

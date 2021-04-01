@@ -51,7 +51,7 @@ function News() {
       <h2>Новости</h2>
       <div className="news_container">
         {news.map((el, id) => (
-          <div className="news">
+          <div key={id} className="news">
             <p>{el.news_date}</p>
             <h3>{el.news_title}</h3>
             <p>{el.news_description}</p>
