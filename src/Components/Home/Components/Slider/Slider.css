@@ -1,6 +1,7 @@
 .slider-img {
-  user-select: none;
+  user-select:none;
   width: 100%;
+
 }
 .slider {
   z-index: 1;
@@ -37,5 +38,6 @@
 @media only screen and (max-width: 960px) {
   .slider {
     width: 100%;
+
   }
 }
