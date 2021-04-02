@@ -99,14 +99,14 @@
     width: 100%;
   }
 }
-@media (orientation: landscape) and (max-width: 768px) {
+@media (orientation: landscape) and (max-height: 480px) {
   .promotion .promotion_img {
     min-height: 60vh;
     max-height: 65vh;
   }
 }
 
-@media (orientation: portrait) and (max-width: 768px) {
+@media (orientation: portrait) and (max-height: 768px) {
   .promotion .promotion_img {
     min-height: 21vh;
     max-height: 25vh;
