@@ -107,7 +107,15 @@
   }
 }
 
-@media (orientation: portrait) and (min-width: 768px){
+@media (orientation: portrait) and (max-width: 768px){
+  .promotion .promotion_img {
+    min-height: 21vh;
+    max-height:25vh;
+  }
+}
+
+
+@media (orientation: portrait) and (min-width: 960px){
   .promotion .promotion_img {
     min-height: 15vh;
     max-height:25vh;
