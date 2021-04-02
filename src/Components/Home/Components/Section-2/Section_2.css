@@ -103,3 +103,23 @@
     margin-top: 4%;
   }
 }
+
+@media (orientation: landscape) and (max-height: 480px) {
+  
+  .full-image-container {
+    min-height: 50vh;
+  }
+  .full-image-container img {
+    min-height: 50vh;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 360px) {
+  
+  .full-image-container {
+    min-height: 60vh;
+  }
+  .full-image-container img {
+    min-height: 60vh;
+  }
+}
