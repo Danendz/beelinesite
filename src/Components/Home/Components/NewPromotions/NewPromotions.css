@@ -100,3 +100,16 @@
     width: 100%;
   }
 }
+@media (orientation: landscape) and (max-width: 768px){
+  .promotion .promotion_img {
+    min-height: 60vh;
+    max-height:65vh;
+  }
+}
+
+@media (orientation: portrait) and (min-width: 768px){
+  .promotion .promotion_img {
+    min-height: 15vh;
+    max-height:25vh;
+  }
+}
